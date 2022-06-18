@@ -945,10 +945,10 @@ function clickBuffBonus() {
   for (var i in Game.buffs) {
     // Devastation, Godzamok's buff, is too variable
     if (
-      typeof Game.buffs[i].multClick != "undefined" &&
+      typeof Game.buffs[i].multCpS != "undefined" &&
       Game.buffs[i].name != "Devastation"
     ) {
-      ret *= Game.buffs[i].multClick;
+      ret *= Game.buffs[i].multCpS;
     }
   }
   return ret;
