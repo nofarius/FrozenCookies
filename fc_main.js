@@ -2736,12 +2736,12 @@ function autoGodzamokAction() {
         Game.Objects["Cursor"].sell(countCursor);
         Game.Objects["Farm"].sell(countFarm);
 
-        if (FrozenCookies.autoBuy == 1) {
+        // if (FrozenCookies.autoBuy == 1) {
           safeBuy(Game.Objects["Cursor"], countCursor);
           logEvent("AutoGodzamok", "Bought " + countCursor + " cursors");
           safeBuy(Game.Objects["Farm"], countFarm);
           logEvent("AutoGodzamok", "Bought " + countFarm + " farms");
-        }
+        // }
       }
     }
   }
