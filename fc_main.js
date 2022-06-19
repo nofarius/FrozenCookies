@@ -943,12 +943,12 @@ function probabilitySpan(listType, start, endProbability) {
 function clickBuffBonus() {
   var ret = 1;
   for (var i in Game.buffs) {
+    var buff = Game.buffs[i] 
+    // get the clicks per second value as it can use different fields
+    var cps = buff.multCpS != null ? buff.multCpS : buff.multClick;
     // Devastation, Godzamok's buff, is too variable
-    if (
-      typeof Game.buffs[i].multCpS != "undefined" &&
-      Game.buffs[i].name != "Devastation"
-    ) {
-      ret *= Game.buffs[i].multCpS;
+    if (buff.name != "Devastation" && cps != null) {
+      ret *= cps;
     }
   }
   return ret;
